@@ -283,10 +283,37 @@ document.addEventListener("DOMContentLoaded", main);
 // VehicleServices.service([airAsia, myCar]);
 
 // ASYNCHRONOUS (fungsi yang dieksekusi sesuai keinginan)
-console.log("selamat datang!");
+// console.log("selamat datang!");
 
-setTimeout(() => {
-  console.log("Terimakasih sudah mampir, silakan datang kembali!");
-}, 3000);
+// setTimeout(() => {
+//   console.log("Terimakasih sudah mampir, silakan datang kembali!");
+// }, 3000);
 
-console.log("ada yang bisa dibantu?");
+// console.log("ada yang bisa dibantu?");
+
+// Callback Function
+const getCake = (callback) => {
+  let cake = null;
+  console.log("Sedang membuat kue, silakan tunggu...");
+
+  setTimeout(() => {
+    cake = "kue selesai dibuat!";
+    callback(cake);
+  }, 3000);
+};
+
+getCake((cake) => console.log(cake));
+
+const getCoffe = (callback) => {
+  let coffe = null;
+  console.log("Kopi sedang dibuat, harap tunggu...");
+
+  setTimeout(() => {
+    coffe = "Kopi selesai dibuat!";
+    callback(coffe);
+
+    console.log(`Kopi dan kue siap dihidangkan!`);
+  }, 5000);
+};
+
+getCoffe((coffe) => console.log(coffe));
