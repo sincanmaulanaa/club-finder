@@ -133,151 +133,160 @@ document.addEventListener("DOMContentLoaded", main);
 // friend.instagram = "zainur.roziqin";
 // console.log(friend.instagram);
 
-class Vehicle {
-  constructor(licensePlate, manufacture) {
-    this.licensePlate = licensePlate;
-    this.manufacture = manufacture;
-    this.engineIsActive = false;
-  }
+// class Vehicle {
+//   constructor(licensePlate, manufacture) {
+//     this.licensePlate = licensePlate;
+//     this.manufacture = manufacture;
+//     this.engineIsActive = false;
+//   }
 
-  startEngines() {
-    console.log(`Mesin kendaraan ${this.licensePlate} dinyalakan!`);
-    this.engineIsActive = true;
-  }
+//   startEngines() {
+//     console.log(`Mesin kendaraan ${this.licensePlate} dinyalakan!`);
+//     this.engineIsActive = true;
+//   }
 
-  info() {
-    console.log(`Nomor kendaraan: ${this.licensePlate}`);
-    console.log(`Manufacture: ${this.manufacture}`);
-    console.log(`Mesin: ${this.engineIsActive ? "Active" : "Inactive"}`);
-  }
+//   info() {
+//     console.log(`Nomor kendaraan: ${this.licensePlate}`);
+//     console.log(`Manufacture: ${this.manufacture}`);
+//     console.log(`Mesin: ${this.engineIsActive ? "Active" : "Inactive"}`);
+//   }
 
-  parking() {
-    console.log(`Kendaraan dengan nomor ${this.licensePlate} parkir!`);
-  }
-}
+//   parking() {
+//     console.log(`Kendaraan dengan nomor ${this.licensePlate} parkir!`);
+//   }
+// }
 
-class LandVechicles extends Vehicle {
-  constructor(licensePlate, manufacture, wheels) {
-    super(licensePlate, manufacture);
-    this.wheels = wheels;
-  }
+// class LandVechicles extends Vehicle {
+//   constructor(licensePlate, manufacture, wheels) {
+//     super(licensePlate, manufacture);
+//     this.wheels = wheels;
+//   }
 
-  droveOff() {
-    console.log(`Kendaraan dengan nomor ${this.licensePlate} melaju!`);
-  }
-}
+//   droveOff() {
+//     console.log(`Kendaraan dengan nomor ${this.licensePlate} melaju!`);
+//   }
+// }
 
-class AirVehicles extends Vehicle {
-  constructor(licensePlate, manufacture) {
-    super(licensePlate, manufacture);
-  }
+// class AirVehicles extends Vehicle {
+//   constructor(licensePlate, manufacture) {
+//     super(licensePlate, manufacture);
+//   }
 
-  takeOff() {
-    console.log(`Kendaraan dengan nomor ${this.licensePlate} mendarat!`);
-  }
-}
+//   takeOff() {
+//     console.log(`Kendaraan dengan nomor ${this.licensePlate} mendarat!`);
+//   }
+// }
 
-class Car extends LandVechicles {
-  constructor(licensePlate, manufacture, wheels) {
-    super(licensePlate, manufacture, wheels);
-  }
+// class Car extends LandVechicles {
+//   constructor(licensePlate, manufacture, wheels) {
+//     super(licensePlate, manufacture, wheels);
+//   }
 
-  openDoor() {
-    console.log(`Membuka pintu!`);
-  }
+//   openDoor() {
+//     console.log(`Membuka pintu!`);
+//   }
 
-  // overriding method
-  info() {
-    super.info();
-    console.log(`Jumlah roda: ${this.wheels}`);
-  }
-}
+//   // overriding method
+//   info() {
+//     super.info();
+//     console.log(`Jumlah roda: ${this.wheels}`);
+//   }
+// }
 
-class MotorCycle extends LandVechicles {
-  constructor(licensePlate, manufacture) {
-    super(licensePlate, manufacture);
-  }
+// class MotorCycle extends LandVechicles {
+//   constructor(licensePlate, manufacture) {
+//     super(licensePlate, manufacture);
+//   }
 
-  doWheelie() {
-    console.log(`Kendaraan dengan nomor ${this.licensePlate} ngetrill!`);
-  }
-}
+//   doWheelie() {
+//     console.log(`Kendaraan dengan nomor ${this.licensePlate} ngetrill!`);
+//   }
+// }
 
-class Plane extends AirVehicles {
-  constructor(licensePlate, manufacture, wings) {
-    super(licensePlate, manufacture);
-    this.wings = wings;
-  }
+// class Plane extends AirVehicles {
+//   constructor(licensePlate, manufacture, wings) {
+//     super(licensePlate, manufacture);
+//     this.wings = wings;
+//   }
 
-  turnOnJet() {
-    console.log(`Pesawat dengan nomor ${this.licensePlate} dinyalakan!`);
-  }
-}
+//   turnOnJet() {
+//     console.log(`Pesawat dengan nomor ${this.licensePlate} dinyalakan!`);
+//   }
+// }
 
-class Helicopter extends AirVehicles {
-  constructor(licensePlate, manufacture, blades) {
-    super(licensePlate, manufacture);
-    this.blades = blades;
-  }
+// class Helicopter extends AirVehicles {
+//   constructor(licensePlate, manufacture, blades) {
+//     super(licensePlate, manufacture);
+//     this.blades = blades;
+//   }
 
-  lowFlying() {
-    console.log(`Helicopter sedang terbang rendah!`);
-  }
+//   lowFlying() {
+//     console.log(`Helicopter sedang terbang rendah!`);
+//   }
 
-  info() {
-    super.info();
-    console.log(`Helicopter ini memiliki ${this.blades} baling`);
-  }
-}
+//   info() {
+//     super.info();
+//     console.log(`Helicopter ini memiliki ${this.blades} baling`);
+//   }
+// }
 
-class VehicleFactory {
-  static repair(vehicles) {
-    vehicles.forEach((vehicle) =>
-      console.log(
-        `Kendaraan dengan nomor ${vehicle.licensePlate} merek ${vehicle.manufacture} sedang melakukan perbaikan`
-      )
-    );
-  }
-}
+// class VehicleFactory {
+//   static repair(vehicles) {
+//     vehicles.forEach((vehicle) =>
+//       console.log(
+//         `Kendaraan dengan nomor ${vehicle.licensePlate} merek ${vehicle.manufacture} sedang melakukan perbaikan`
+//       )
+//     );
+//   }
+// }
 
-class VehicleWash {
-  static wash(vehicles) {
-    vehicles.forEach((vehicle) =>
-      console.log(`${vehicle.manufacture} sedang dicuci!`)
-    );
-  }
-}
+// class VehicleWash {
+//   static wash(vehicles) {
+//     vehicles.forEach((vehicle) =>
+//       console.log(`${vehicle.manufacture} sedang dicuci!`)
+//     );
+//   }
+// }
 
-class VehicleServices {
-  static service(vehicles) {
-    vehicles.forEach((vehicle) =>
-      console.log(
-        `Kendaraan dengan nomor ${vehicle.licensePlate} sedang diservice!`
-      )
-    );
-  }
-}
+// class VehicleServices {
+//   static service(vehicles) {
+//     vehicles.forEach((vehicle) =>
+//       console.log(
+//         `Kendaraan dengan nomor ${vehicle.licensePlate} sedang diservice!`
+//       )
+//     );
+//   }
+// }
 
-const myCar = new Car("AE 121 BT", "Honda", 4);
-myCar.startEngines();
-myCar.info();
-myCar.droveOff();
+// const myCar = new Car("AE 121 BT", "Honda", 4);
+// myCar.startEngines();
+// myCar.info();
+// myCar.droveOff();
 
-const myMotorCycle = new MotorCycle("AE 9899 BH", "Yamaha MX");
-myMotorCycle.startEngines();
-myMotorCycle.info();
-myMotorCycle.doWheelie();
+// const myMotorCycle = new MotorCycle("AE 9899 BH", "Yamaha MX");
+// myMotorCycle.startEngines();
+// myMotorCycle.info();
+// myMotorCycle.doWheelie();
 
-const airAsia = new Plane("BG 88A AS", "Boeing", 2);
-airAsia.turnOnJet();
-airAsia.info();
-airAsia.parking();
+// const airAsia = new Plane("BG 88A AS", "Boeing", 2);
+// airAsia.turnOnJet();
+// airAsia.info();
+// airAsia.parking();
 
-const myCopter = new Helicopter("BA 78HH SS", "Suzuki", 3);
-myCopter.startEngines();
-myCopter.info();
-myCopter.lowFlying();
+// const myCopter = new Helicopter("BA 78HH SS", "Suzuki", 3);
+// myCopter.startEngines();
+// myCopter.info();
+// myCopter.lowFlying();
 
-VehicleFactory.repair([myCar, airAsia]);
-VehicleWash.wash([myCopter, myMotorCycle]);
-VehicleServices.service([airAsia, myCar]);
+// VehicleFactory.repair([myCar, airAsia]);
+// VehicleWash.wash([myCopter, myMotorCycle]);
+// VehicleServices.service([airAsia, myCar]);
+
+// ASYNCHRONOUS (fungsi yang dieksekusi sesuai keinginan)
+console.log("selamat datang!");
+
+setTimeout(() => {
+  console.log("Terimakasih sudah mampir, silakan datang kembali!");
+}, 3000);
+
+console.log("ada yang bisa dibantu?");
