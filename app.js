@@ -338,4 +338,4 @@ const handlerError = (rejectedValue) => {
 };
 
 const makeCoffee = new Promise(executorFunction);
-makeCoffee.then(handlerSuccess, handlerError);
+makeCoffee.then(handlerSuccess).catch(handlerError);
