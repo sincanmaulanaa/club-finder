@@ -292,28 +292,50 @@ document.addEventListener("DOMContentLoaded", main);
 // console.log("ada yang bisa dibantu?");
 
 // Callback Function
-const getCake = (callback) => {
-  let cake = null;
-  console.log("Sedang membuat kue, silakan tunggu...");
+// const getCake = (callback) => {
+//   let cake = null;
+//   console.log("Sedang membuat kue, silakan tunggu...");
 
-  setTimeout(() => {
-    cake = "kue selesai dibuat!";
-    callback(cake);
-  }, 3000);
+//   setTimeout(() => {
+//     cake = "kue selesai dibuat!";
+//     callback(cake);
+//   }, 3000);
+// };
+
+// getCake((cake) => console.log(cake));
+
+// const getCoffe = (callback) => {
+//   let coffe = null;
+//   console.log("Kopi sedang dibuat, harap tunggu...");
+
+//   setTimeout(() => {
+//     coffe = "Kopi selesai dibuat!";
+//     callback(coffe);
+
+//     console.log(`Kopi dan kue siap dihidangkan!`);
+//   }, 5000);
+// };
+
+// getCoffe((coffe) => console.log(coffe));
+
+// Promise
+const executorFunction = (resolve, reject) => {
+  const isCoffeeMakerReady = true;
+
+  if (isCoffeeMakerReady) {
+    resolve("Kopi berhasil dibuat!");
+  } else {
+    reject("Mesin kopi tidak dapat digunakan!");
+  }
 };
 
-getCake((cake) => console.log(cake));
-
-const getCoffe = (callback) => {
-  let coffe = null;
-  console.log("Kopi sedang dibuat, harap tunggu...");
-
-  setTimeout(() => {
-    coffe = "Kopi selesai dibuat!";
-    callback(coffe);
-
-    console.log(`Kopi dan kue siap dihidangkan!`);
-  }, 5000);
+const handlerSuccess = (resolvedValue) => {
+  console.log(resolvedValue);
 };
 
-getCoffe((coffe) => console.log(coffe));
+const handlerError = (rejectedValue) => {
+  console.log(rejectedValue);
+};
+
+const makeCoffee = new Promise(executorFunction);
+makeCoffee.then(handlerSuccess, handlerError);
