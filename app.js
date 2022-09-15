@@ -319,23 +319,124 @@ document.addEventListener("DOMContentLoaded", main);
 // getCoffe((coffe) => console.log(coffe));
 
 // Promise
-const executorFunction = (resolve, reject) => {
-  const isCoffeeMakerReady = true;
+// const executorFunction = (resolve, reject) => {
+//   const isCoffeeMakerReady = true;
 
-  if (isCoffeeMakerReady) {
-    resolve("Kopi berhasil dibuat!");
-  } else {
-    reject("Mesin kopi tidak dapat digunakan!");
-  }
+//   if (isCoffeeMakerReady) {
+//     resolve("Kopi berhasil dibuat!");
+//   } else {
+//     reject("Mesin kopi tidak dapat digunakan!");
+//   }
+// };
+
+// const handlerSuccess = (resolvedValue) => {
+//   console.log(resolvedValue);
+// };
+
+// const handlerError = (rejectedValue) => {
+//   console.log(rejectedValue);
+// };
+
+// const makeCoffee = new Promise(executorFunction);
+// makeCoffee.then(handlerSuccess).catch(handlerError);
+
+// const state = {
+//   isCoffeeMakerReady: true,
+//   seedStocks: {
+//     arabica: 250,
+//     robusta: 60,
+//     liberica: 80,
+//   },
+// };
+
+// const getSeeds = (type, miligrams) => {
+//   return new Promise((resolve, reject) => {
+//     if (state.seedStocks[type] >= miligrams) {
+//       state.seedStocks[type] -= miligrams;
+//       resolve("Biji kopi didapatkan!");
+//     } else {
+//       reject("Maaf stock kopi habis!");
+//     }
+//   });
+// };
+
+// const makeCoffee = (seeds) => {
+//   return new Promise((resolve, reject) => {
+//     if (state.isCoffeeMakerReady) {
+//       resolve("Kopi berhasil dibuat!");
+//     } else {
+//       reject("Maaf mesin tidak dapat digunakan!");
+//     }
+//   });
+// };
+
+// const servingToTable = (coffee) => {
+//   return new Promise((resolve) => {
+//     resolve("Pesanan kopi sudah selesai!");
+//   });
+// };
+
+// const reservedCoffee = (type, miligrams) => {
+//   getSeeds(type, miligrams)
+//     .then(makeCoffee)
+//     .then(servingToTable)
+//     .then((resolvedValue) => {
+//       console.log(resolvedValue);
+//     })
+//     .catch((rejectedValue) => {
+//       console.log(rejectedValue);
+//     });
+// };
+
+// reservedCoffee("robusta", 50);
+
+// PROMISE ALL
+const arabicaOrder = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Kopi arabika selesai!");
+    }, 4000);
+  });
 };
 
-const handlerSuccess = (resolvedValue) => {
-  console.log(resolvedValue);
+const robustaOrder = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Kopi robusta selesai!");
+    }, 2000);
+  });
 };
 
-const handlerError = (rejectedValue) => {
-  console.log(rejectedValue);
+const libericaOrder = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Kopi liberika selesai!");
+    }, 3000);
+  });
 };
 
-const makeCoffee = new Promise(executorFunction);
-makeCoffee.then(handlerSuccess).catch(handlerError);
+const capuccinoOrder = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Kopi kapucino selesai!");
+    }, 1000);
+  });
+};
+
+const creamyOrder = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Kopi creamy selesai!");
+    });
+  });
+};
+
+const promises = [
+  arabicaOrder(),
+  robustaOrder(),
+  libericaOrder(),
+  capuccinoOrder(),
+  creamyOrder(),
+];
+
+Promise.all(promises).then((resolvedValue) => console.log(resolvedValue));
