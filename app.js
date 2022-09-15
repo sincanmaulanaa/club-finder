@@ -391,61 +391,87 @@ document.addEventListener("DOMContentLoaded", main);
 // reservedCoffee("robusta", 50);
 
 // PROMISE ALL
-const arabicaOrder = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Kopi arabika selesai!");
-    }, 4000);
+// const arabicaOrder = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Kopi arabika selesai!");
+//     }, 4000);
+//   });
+// };
+
+// const robustaOrder = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Kopi robusta selesai!");
+//     }, 2000);
+//   });
+// };
+
+// const libericaOrder = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Kopi liberika selesai!");
+//     }, 3000);
+//   });
+// };
+
+// const capuccinoOrder = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Kopi kapucino selesai!");
+//     }, 1000);
+//   });
+// };
+
+// const creamyOrder = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Kopi creamy selesai!");
+//     });
+//   });
+// };
+
+// const redVelvetOrder = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Red Velvet selesai!");
+//     });
+//   });
+// };
+
+// const promises = [
+//   arabicaOrder(),
+//   robustaOrder(),
+//   libericaOrder(),
+//   redVelvetOrder(),
+//   capuccinoOrder(),
+//   creamyOrder(),
+// ];
+
+// Promise.all(promises).then((resolvedValue) => console.log(resolvedValue));
+
+// ASYNC AWAIT
+const coffeeShop = {
+  stock: 15,
+};
+
+const getCoffee = () => {
+  return new Promise((resolve, reject) => {
+    if (coffeeShop.stock <= 15) {
+      resolve("Kopi berhasil dibuat!");
+    } else {
+      reject("Kopi gagal dibuat!");
+    }
   });
 };
 
-const robustaOrder = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Kopi robusta selesai!");
-    }, 2000);
-  });
+const makeCoffee = async () => {
+  try {
+    const coffee = await getCoffee();
+    console.log(coffee);
+  } catch (rejectedReason) {
+    console.log(rejectedReason);
+  }
 };
 
-const libericaOrder = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Kopi liberika selesai!");
-    }, 3000);
-  });
-};
-
-const capuccinoOrder = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Kopi kapucino selesai!");
-    }, 1000);
-  });
-};
-
-const creamyOrder = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Kopi creamy selesai!");
-    });
-  });
-};
-
-const redVelvetOrder = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Red Velvet selesai!");
-    });
-  });
-};
-
-const promises = [
-  arabicaOrder(),
-  robustaOrder(),
-  libericaOrder(),
-  redVelvetOrder(),
-  capuccinoOrder(),
-  creamyOrder(),
-];
-
-Promise.all(promises).then((resolvedValue) => console.log(resolvedValue));
+makeCoffee();
