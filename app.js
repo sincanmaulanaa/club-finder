@@ -431,10 +431,19 @@ const creamyOrder = () => {
   });
 };
 
+const redVelvetOrder = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Red Velvet selesai!");
+    });
+  });
+};
+
 const promises = [
   arabicaOrder(),
   robustaOrder(),
   libericaOrder(),
+  redVelvetOrder(),
   capuccinoOrder(),
   creamyOrder(),
 ];
