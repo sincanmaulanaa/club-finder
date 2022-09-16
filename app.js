@@ -1,5 +1,3 @@
-document.addEventListener("DOMContentLoaded", main);
-
 // Object Function
 // function Profile(name, age, hobby) {
 //   this.name = name;
@@ -475,3 +473,23 @@ document.addEventListener("DOMContentLoaded", main);
 // };
 
 // makeCoffee();
+
+// Modul Ekspor dan Impor
+const {
+  coffeeStock,
+  isCoffeeMakerReady,
+} = require("./src/script/data/stock.js");
+
+console.log(isCoffeeMakerReady);
+
+const makeCoffee = (type, miligrams) => {
+  if (coffeeStock[type] >= miligrams) {
+    console.log("Kopi berhasil dibuat");
+  } else {
+    console.log("Biji kopi habis");
+  }
+};
+
+makeCoffee("robusta", 10);
+
+//document.addEventListener("DOMContentLoaded", main);
