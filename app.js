@@ -1,3 +1,6 @@
+import main from "./src/script/view/main.js";
+
+document.addEventListener("DOMContentLoaded", main);
 // Object Function
 // function Profile(name, age, hobby) {
 //   this.name = name;
@@ -475,10 +478,7 @@
 // makeCoffee();
 
 // Modul Ekspor dan Impor
-const {
-  coffeeStock,
-  isCoffeeMakerReady,
-} = require("./src/script/data/stock.js");
+import { coffeeStock, isCoffeeMakerReady } from "./src/script/data/stock.js";
 
 console.log(isCoffeeMakerReady);
 
@@ -491,5 +491,3 @@ const makeCoffee = (type, miligrams) => {
 };
 
 makeCoffee("robusta", 10);
-
-//document.addEventListener("DOMContentLoaded", main);

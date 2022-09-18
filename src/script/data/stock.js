@@ -6,4 +6,4 @@ const coffeeStock = {
 
 const isCoffeeMakerReady = true;
 
-module.exports = { coffeeStock, isCoffeeMakerReady };
+export { coffeeStock, isCoffeeMakerReady };
