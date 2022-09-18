@@ -1,17 +1,11 @@
-let imageFigureElement = document.querySelector("image-figure");
-if (!imageFigureElement) {
-  imageFigureElement = document.createElement("image-figure");
-  document.body.appendChild(imageFigureElement);
-}
+const createElement = document.createElement("image-figure");
 
-setTimeout(() => {
-  imageFigureElement.setAttribute("caption", "Gambar 1");
-}, 1000);
+createElement.setAttribute(
+  "src",
+  "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+);
 
-setTimeout(() => {
-  imageFigureElement.setAttribute("source", "profile.jpg");
-}, 2000);
+createElement.setAttribute("alt", "Dicoding logo");
+createElement.setAttribute("caption", "Huruf g di logo dicoding");
 
-setTimeout(() => {
-  imageFigureElement.remove();
-}, 4000);
+document.body.appendChild(createElement);
