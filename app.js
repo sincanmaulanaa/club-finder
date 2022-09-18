@@ -478,16 +478,16 @@ document.addEventListener("DOMContentLoaded", main);
 // makeCoffee();
 
 // Modul Ekspor dan Impor
-import { coffeeStock, isCoffeeMakerReady } from "./src/script/data/stock.js";
+// import { coffeeStock, isCoffeeMakerReady } from "./src/script/data/stock.js";
 
-console.log(isCoffeeMakerReady);
+// console.log(isCoffeeMakerReady);
 
-const makeCoffee = (type, miligrams) => {
-  if (coffeeStock[type] >= miligrams) {
-    console.log("Kopi berhasil dibuat");
-  } else {
-    console.log("Biji kopi habis");
-  }
-};
+// const makeCoffee = (type, miligrams) => {
+//   if (coffeeStock[type] >= miligrams) {
+//     console.log("Kopi berhasil dibuat");
+//   } else {
+//     console.log("Biji kopi habis");
+//   }
+// };
 
-makeCoffee("robusta", 10);
+// makeCoffee("robusta", 10);
