@@ -1,11 +1,9 @@
-const createElement = document.createElement("image-figure");
+import "../src/components/ArticleItem.js";
+import article from "./article-data.js";
 
-createElement.setAttribute(
-  "src",
-  "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-);
+const containerElement = document.querySelector(".container");
 
-createElement.setAttribute("alt", "Dicoding logo");
-createElement.setAttribute("caption", "Huruf g di logo dicoding");
+const articleItemElement = document.createElement("article-item");
+articleItemElement.article = article;
 
-document.body.appendChild(createElement);
+containerElement.appendChild(articleItemElement);
