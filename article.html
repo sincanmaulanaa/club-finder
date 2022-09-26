@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Article</title>
-	<link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Styling without Shadow DOM</title>
+	<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-	<div class="container">
+	<image-figure src="src/images/dicoding-1.jpg" alt="Dicoding Logo" caption="Huruf g dalam logo Dicoding">
+	</image-figure>
 
-	</div>
-
-	<script src="./customElement/main.js" type="module"></script>
+	<!-- Styling di dalam image-figure akan mempengaruhi juga elemen di luarnya -->
+	<figure>
+		<img src="src/images/dicoding-2.jpg" alt="Dicoding logo" />
+		<figcaption>Huruf g dalam logo Dicoding</figcaption>
+	</figure>
+	<script src="./src/script/components/ImageFigure.js"></script>
 </body>
 
 </html>
